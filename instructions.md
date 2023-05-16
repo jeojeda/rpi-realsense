@@ -2,16 +2,57 @@ The following steps are based on the guide that [pfcouto](https://github.com/pfc
 https://github.com/datasith/Ai_Demos_RPi/issues/10
 These instructions allow you to configure and install a Raspberry Pi from scratch.
 
+----------------------
+# General Instructions
+Setup of a raspberry pi 4 and Realsense Camera D405
 
+## 1. Setup the Rasperry Pi case
+1. setup case
+https://www.youtube.com/watch?v=hWH3v-YUM1E
 
+2. heat sink
+https://www.youtube.com/watch?v=E-4GaAz7XNM
 
-## Pre-install Requirements
+## 2. Install rpi image with Raspberry Pi Imager
+1. general instructions and steps from:
+https://www.youtube.com/watch?v=LBIBUntnxp8
+Follow only the part of the RPI Image
+
+## 3. Connect with SSH
+On Windows CMD
+    ```
+    ssh <username>@<hostname> #example rpi@raspberrypi
+    type password
+    ```
+## 4. Start the setup of the Raspberry Pi:
+- Update
+    ```
+    ~ $ sudo apt update
+    ~ $ sudo apt upgrade    ```
+
+- Enabling VNC Server at the command line
+You can enable VNC Server at the command line using raspi-config:
+```
+~ $ sudo raspi-config
+```
+Enable VNC Server by doing the following:
+- Navigate to Interfacing Options.
+- Scroll down and select VNC 
+- Select Yes.
+
+Install and run VNC viewer on Windows (https://www.realvnc.com/en/connect/download/viewer/)
+- connect using the name of the local server, for example: ```raspberrypi```
+
+----------------------
+
+# Raspberry Pi Setup
+### Pre-install Requirements on Raspbian
 - Start with updating, upgrading, and installing dependencies and tools:
 ```
 sudo apt-get update && sudo apt-get dist-upgrade
 sudo apt-get install automake libtool vim cmake libusb-1.0-0-dev libx11-dev xorg-dev libglu1-mesa-dev
 ```
-## RASPBERRY OS
+### Raspberry OS
 - Expand the filesystem by selecting the Advanced Options menu entry, and select yes to rebooting:
 ```
 sudo raspi-config
@@ -48,7 +89,7 @@ export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 source ~/.bashrc
 ```
 
-## Installation
+### Installation
 - Install ```protobuf```* — Google's language-neutral, platform-neutral, extensible mechanism for serializing structured data:
 ```
 cd ~
