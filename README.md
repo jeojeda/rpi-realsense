@@ -249,3 +249,15 @@ sudo rm python
 sudo ln -s /usr/local/bin/python3.9 python
 python --version
 ```
+
+
+## Error
+error runing ./autogen.sh
+
+first 
+sudo apt install autoconf
+
+
+second
+sudo apt update
+sudo apt install libtool
