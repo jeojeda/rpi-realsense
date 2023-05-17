@@ -12,12 +12,15 @@ https://www.youtube.com/watch?v=E-4GaAz7XNM
 1. general instructions and steps from:
 https://www.youtube.com/watch?v=LBIBUntnxp8
 
-## Instructions to connect with SSH
+## Instructions to connect with SSH and some basics commands
 On Windows CMD
     ```
     ssh <username>@<hostname> #example rpi@raspberrypi
     type password
     ```
+    
+to list the command lines that have been written ```sudo cat ~/.bash_history ```
+
 to turn off
     ```
     ~ $ sudo halt
