@@ -69,14 +69,11 @@ After downloading and extracting the image, use [balenaEtcher](https://www.balen
 
 ----------------------
 
-# Raspberry Pi Setup
-### Pre-install Requirements on Raspbian
-- Start with updating, upgrading, and installing dependencies and tools:
-```
-sudo apt-get update && sudo apt-get dist-upgrade
-sudo apt-get install automake libtool vim cmake libusb-1.0-0-dev libx11-dev xorg-dev libglu1-mesa-dev
-```
+
 ### Raspberry OS
+
+```sudo apt-get update && sudo apt-get dist-upgrade```
+
 - Expand the filesystem by selecting the Advanced Options menu entry, and select yes to rebooting:
 ```
 sudo raspi-config
@@ -89,6 +86,16 @@ sudo nano /etc/dphys-swapfile
 ```
 sudo /etc/init.d/dphys-swapfile restart swapon -s
 ```
+
+# Raspberry Pi Setup
+### Pre-install Requirements on Raspbian
+- Start with updating, upgrading, and installing dependencies and tools:
+```
+sudo apt-get update && sudo apt-get dist-upgrade
+sudo apt-get install -y automake libtool cmake libusb-1.0-0-dev libx11-dev xorg-dev libglu1-mesa-dev libssl-dev clang llvm libatlas-base-dev python3-opencv
+```
+
+From another source, ```vim``` was also installed. I prefer to use ```ǹano``` instead.
 
 - Create a new ```udev``` rule:
 ```
@@ -106,11 +113,16 @@ exit
 
 - Modify the path by adding the following line to the ```.bashrc``` file:
 ```
+sudo nano ~/.bashrc
 export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 ```
 - Apply the change:
 ```
 source ~/.bashrc
+```
+### After an error libtbb-dev was installed before the Python installation inside Protobuf
+```
+sudo apt-get install libtbb-dev
 ```
 
 ### Installation
@@ -175,14 +187,21 @@ source ~/.bashrc
 ```
 sudo apt-get install python-opengl
 sudo -H pip3 install pyopengl
+# if there is an error try
+sudo apt get install python-opengl
 sudo -H pip3 install pyopengl_accelerate
+# if there is an error try
+sudo pip3 install pyopengl
 ```
 - Change pi settings (enable ```OpenGL```):
 ```
 sudo raspi-config
 "7. Advanced Options" – "A8 GL Driver" – "G2 GL (Fake KMS)"
 ```
-
+- Run Realsense viewer
+```
+realsense-viewer
+```
 
 ## Remote Operation
 - Enable VNC:
