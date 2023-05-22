@@ -229,7 +229,8 @@ sudo ln -s /usr/local/bin/python3.9 python
 python --version
 ```
 ## * Error
-error runing ```./autogen.sh```
+error running ```./autogen.sh```
+[autogen.sh: autoref: not found](https://github.com/meganz/MEGAcmd/issues/218)
 
 first ```sudo apt install autoconf```
 second ```sudo apt update```
