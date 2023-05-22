@@ -14,7 +14,7 @@
 ----------------------
 
 The following steps are based on the guide that [pfcouto](https://github.com/pfcouto) compiled and shared in 
-https://github.com/datasith/Ai_Demos_RPi/issues/10
+https://github.com/datasith/Ai_Demos_RPi/issues/10 and [mathklk](https://github.com/mathklk/realsense_raspberry_pi4)
 
 ----------------------
 # General Instructions
