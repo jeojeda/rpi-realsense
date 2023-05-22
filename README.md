@@ -29,39 +29,40 @@ On Windows CMD
 - Update
     ```
     ~ $ sudo apt update
-    ~ $ sudo apt upgrade    ```
+    ~ $ sudo apt upgrade    
+    ```
 
 - Enabling VNC Server at the command line
 You can enable VNC Server at the command line using raspi-config:
 ```
 ~ $ sudo raspi-config
 ```
-Enable VNC Server by doing the following:
-- Navigate to Interfacing Options.
-- Scroll down and select VNC 
-- Select Yes.
 
-Install and run VNC viewer on Windows (https://www.realvnc.com/en/connect/download/viewer/)
+## 5. Remote Operation
+Enable VNC Server:
+```
+"3. Interface Options"
+"I3. VNC Enable graphical remote access using RealVNC" - "Yes"
+"2. Display Options"
+"D5. VNC Rsolution" - "1280x720"
+
+- Select "Finish" on the raspi-config menu, and select "Yes" to rebooting
+
+- Install a VNC client on another computer, for example [VNC Viewer by RealVNC](https://www.realvnc.com/en/connect/download/viewer/)
 - connect using the name of the local server, for example: ```raspberrypi```
-
+```
 
 ----------------------
-### Raspberry OS
+# Raspberry OS
 
 ```sudo apt-get update && sudo apt-get dist-upgrade```
 
 - Expand the filesystem by selecting the Advanced Options menu entry, and select yes to rebooting:
-```
-sudo raspi-config
-```
+```sudo raspi-config```
+
 - Increase swap to 2GB by changing the file below to ```CONF_SWAPSIZE=2048:```
-```
-sudo nano /etc/dphys-swapfile
-```
-- Apply the change:
-```
-sudo /etc/init.d/dphys-swapfile restart swapon -s
-```
+```sudo nano /etc/dphys-swapfile```
+- Apply the change: ```sudo /etc/init.d/dphys-swapfile restart swapon -s```
 
 # Raspberry Pi Setup
 ### Pre-install Requirements on Raspbian
@@ -179,20 +180,12 @@ sudo raspi-config
 realsense-viewer
 ```
 
-## Remote Operation
-- Enable VNC:
-```
-"3. Boot Options" – "B1 Desktop/CLI" – "B4 Desktop Autologin"
-"5. Interfacing Options" – "P3 VNC" – "Yes"
-"7. Advanced Options" – "A5 Resolution" – "DMT Mode 85 1280X720 60Hz 16:9"
-```
-- Select "Finish" on the raspi-config menu, and select "Yes" to rebooting
-- Install a VNC client on another computer, for example [VNC Viewer by RealVNC](https://www.realvnc.com/en/connect/download/viewer/)
-- VNC into the Raspberry Pi and run the built-in viewer from a terminal window:
-```
-realsense-viewer
-```
-## Debuging
+
+
+
+
+
+## * Debuging
 - ERROR: [Could not initialize offscreen context! ](https://github.com/acrobotic/Ai_Demos_RPi/issues/1#issue-628919760)
 ```
 pi@raspberrypi:~ $ realsense-viewer
@@ -218,15 +211,6 @@ pi@raspberrypi:~ $ realsense-viewer
 GLFW Driver Error: GLX: GLX version 1.3 is required
 Could not initialize offscreen context!
 ```
-
-
-
-
-
-
-
-
-
 ## * Install Python 3.9.2
 https://raspberrytips.com/install-latest-python-raspberry-pi/
 - Download and extract
@@ -244,15 +228,9 @@ sudo rm python
 sudo ln -s /usr/local/bin/python3.9 python
 python --version
 ```
+## * Error
+error runing ```./autogen.sh```
 
-
-## Error
-error runing ./autogen.sh
-
-first 
-sudo apt install autoconf
-
-
-second
-sudo apt update
-sudo apt install libtool
+first ```sudo apt install autoconf```
+second ```sudo apt update```
+third ```sudo apt install libtool```
