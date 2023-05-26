@@ -237,3 +237,13 @@ error running ```./autogen.sh```
 first ```sudo apt install autoconf```
 second ```sudo apt update```
 third ```sudo apt install libtool```
+
+## * Install Rhino3dm (Python library based on OpenNURBS with a RhinoCommon style) + ghhops_server
+```
+# if pip install rhino3dm doesn't work
+pip install rhino3dm==8.0.0b0
+```
+
+```
+pip install ghhops_server
+```
