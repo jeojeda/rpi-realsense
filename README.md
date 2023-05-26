@@ -3,6 +3,8 @@
 The following steps are based on the guide that [pfcouto](https://github.com/pfcouto) compiled and shared in 
 https://github.com/datasith/Ai_Demos_RPi/issues/10 and [mathklk](https://github.com/mathklk/realsense_raspberry_pi4)
 
+Visit the [wiki](https://github.com/jeojeda/rpi-realsense/wiki) for more general instructions about Git, How to setup a network, etc.
+
 ----------------------
 # General Instructions
 Setup of a raspberry pi 4 and Realsense Camera D405
