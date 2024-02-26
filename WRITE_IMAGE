@@ -1,0 +1,15 @@
+Option 1: 
+1. Install Raspberry Pi Imager
+https://www.raspberrypi.com/software/
+
+Option 2:
+1. Download and install Win32 Disk Imager from this link:
+http://sourceforge.net/projects/win32diskimager/files/latest/download
+2. Plug the SD card into a SD card slot or adaptor for your PC.
+3. Select the IMG file
+4. Run Win32DiskImager.exe application (may just be shown as Win32DiskImager depending on your windows settings)
+  Ensure the correct driver letter is selected for the SD card – double check this is right in Windows Explorer as Win32DiskImager will overwrite the entire drive without warning if the wrong drive is selected!
+  Select the <YOUR FILE NAME>.img file
+5. Press Write and wait for the program to write the operating system onto the SD card.
+6. Once the writing is done plug the SD card into the Raspberry Pi and power it up.
+
