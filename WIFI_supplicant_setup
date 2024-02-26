@@ -1,0 +1,16 @@
+sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
+
+network={
+   ssid="eduroam"
+   proto=RSN
+   key_mgmt=WPA-EAP
+   eap=PEAP
+   identity="USER@tu-darmstadt.de"
+   password="PASSWORD"
+   phase1="peaplabel=0"
+   phase2="auth=MSCHAPV2"
+}
+
+
+
+#Where USER is <TU-ID>lan00, etc
